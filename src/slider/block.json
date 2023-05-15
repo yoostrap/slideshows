@@ -1,0 +1,82 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 2,
+	"name": "hizzle-slider/slider",
+	"title": "Slider",
+	"description": "Displays content in a slider.",
+	"category": "design",
+	"keywords": [
+		"slider",
+		"slide",
+		"testimonial",
+		"quote",
+		"gallery"
+	],
+	"icon": "page",
+	"version": "1.0.0",
+	"textdomain": "hizzle-slider",
+	"attributes": {
+		"autoHeight": {
+			"type": "boolean",
+			"default": false
+		},
+		"centeredSlides": {
+			"type": "boolean",
+			"default": false
+		},
+		"direction": {
+			"type": "string",
+			"default": "horizontal",
+			"enum": [
+				"horizontal",
+				"vertical"
+			]
+		},
+		"effect": {
+			"type": "string",
+			"default": "slide",
+			"enum": [
+				"slide",
+				"fade",
+				"cube",
+				"coverflow",
+				"flip",
+				"creative",
+				"cards"
+			]
+		},
+		"loop": {
+			"type": "boolean",
+			"default": false
+		},
+		"slidesPerView": {
+			"type": "number",
+			"default": 1
+		},
+		"speed": {
+			"type": "number",
+			"default": 300
+		},
+		"showArrows": {
+			"type": "boolean",
+			"default": true
+		},
+		"pagination": {
+			"type": "boolean",
+			"default": true
+		},
+		"autoplay": {
+			"type": "number",
+			"default": 0
+		}
+	},
+	"supports": {
+		"anchor": true,
+		"spacing": {
+			"margin": true
+		}
+	},
+	"editorScript": "file:./index.js",
+	"script": "file:./view.js",
+	"style": "file:./view.css"
+}
