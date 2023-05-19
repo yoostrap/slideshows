@@ -15,7 +15,7 @@ const { name, icon } = json;
 registerBlockType( name, {
 	icon: {
 		src: icon,
-		foreground: '#0080FF',
+		foreground: '#20b2aa',
 	},
 	edit,
 	save,

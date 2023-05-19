@@ -19,7 +19,7 @@ export default function Save ( { attributes } ) {
 	const colorProps   = getColorClassesAndStyles( attributes );
 	const spacingProps = getSpacingClassesAndStyles( attributes );
 	const slideClasses = classnames(
-		'hizzle-slider__slide',
+		'splide__slide',
 		colorProps.className,
 		borderProps.className,
 		spacingProps.className,
@@ -33,8 +33,8 @@ export default function Save ( { attributes } ) {
 	const blockProps = useBlockProps.save( { className: slideClasses, style: slideStyle } );
 
 	return (
-		<div {...blockProps}>
+		<li {...blockProps}>
 			<InnerBlocks.Content />
-		</div>
+		</li>
 	);
 };

@@ -2,7 +2,7 @@
  * WordPress dependencies.
  */
 import {
-	useInnerBlocksProps,
+	InnerBlocks,
 	useBlockProps,
 	__experimentalUseBorderProps as useBorderProps,
 	__experimentalUseColorProps as useColorProps,
@@ -20,8 +20,11 @@ export default function Edit({attributes}) {
 	const borderProps  = useBorderProps( attributes );
 	const colorProps   = useColorProps( attributes );
 	const spacingProps = useSpacingProps( attributes );
-	const blockProps   = useBlockProps( { className: 'hizzle-slider__slide', style: { ...borderProps.style, ...colorProps.style, ...spacingProps.style } } );
-	const innerProps   = useInnerBlocksProps( blockProps, {template} );
+	const blockProps   = useBlockProps( { className: 'splide__slide', style: { ...borderProps.style, ...colorProps.style, ...spacingProps.style } } );
 
-	return <div {...innerProps} />;
+	return (
+		<li {...blockProps}>
+			<InnerBlocks template={template}/>
+		</li>
+	);
 };

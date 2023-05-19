@@ -1,12 +1,12 @@
 <?php
 /**
- * Plugin Name: Hizzle Slider
- * Plugin URI: https://hizzle.co/slider
- * Description: Easily slide any WordPress editor blocks.
+ * Plugin Name: Hizzle Slideshows
+ * Plugin URI: https://hizzle.co/slideshows
+ * Description: Convert anything into a slideshow.
  * Version: 1.0.0
  * Author: Hizzle
  * Author URI: https://hizzle.co
- * Text Domain: hizzle-slider
+ * Text Domain: hizzle-slideshows
  * Domain Path: /languages/
  * Requires at least: 5.5
  * Requires PHP: 7.0
@@ -18,10 +18,10 @@ defined( 'ABSPATH' ) || exit;
 /**
  * Load all translations for our plugin from the MO file.
  */
-function hizzle_slider_load_textdomain() {
-	load_plugin_textdomain( 'hizzle-slider', false, basename( __DIR__ ) . '/languages' );
+function hizzle_slideshows_load_textdomain() {
+	load_plugin_textdomain( 'hizzle-slideshows', false, basename( __DIR__ ) . '/languages' );
 }
-add_action( 'init', 'hizzle_slider_load_textdomain' );
+add_action( 'init', 'hizzle_slideshows_load_textdomain' );
 
 /**
  * Registers all block assets so that they can be enqueued through Gutenberg in
@@ -29,14 +29,14 @@ add_action( 'init', 'hizzle_slider_load_textdomain' );
  *
  * Passes translations to JavaScript.
  */
-function hizzle_slider_register_block() {
+function hizzle_slideshows_register_block() {
 
 	// Register the block by passing the location of block.json to register_block_type.
-	register_block_type( plugin_dir_path( __FILE__ ) . 'build/slider' );
+	register_block_type( plugin_dir_path( __FILE__ ) . 'build/slideshow' );
     register_block_type( plugin_dir_path( __FILE__ ) . 'build/slide' );
 
 	if ( function_exists( 'wp_set_script_translations' ) ) {
-		wp_set_script_translations( 'hizzle-slider-slider', 'hizzle-slider' );
+		wp_set_script_translations( 'hizzle-slideshows-slideshow', 'hizzle-slideshows' );
 	}
 }
-add_action( 'init', 'hizzle_slider_register_block' );
+add_action( 'init', 'hizzle_slideshows_register_block' );

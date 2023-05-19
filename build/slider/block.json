@@ -12,50 +12,13 @@
     "quote",
     "gallery"
   ],
-  "icon": "page",
+  "icon": "admin-page",
   "version": "1.0.0",
   "textdomain": "hizzle-slider",
   "attributes": {
-    "autoHeight": {
-      "type": "boolean",
-      "default": false
-    },
-    "centeredSlides": {
-      "type": "boolean",
-      "default": false
-    },
-    "direction": {
-      "type": "string",
-      "default": "horizontal",
-      "enum": [
-        "horizontal",
-        "vertical"
-      ]
-    },
-    "effect": {
-      "type": "string",
-      "default": "slide",
-      "enum": [
-        "slide",
-        "fade",
-        "cube",
-        "coverflow",
-        "flip",
-        "creative",
-        "cards"
-      ]
-    },
-    "loop": {
-      "type": "boolean",
-      "default": false
-    },
     "slidesPerView": {
       "type": "number",
       "default": 1
-    },
-    "speed": {
-      "type": "number",
-      "default": 300
     },
     "showArrows": {
       "type": "boolean",
@@ -66,23 +29,21 @@
       "default": true
     },
     "autoplay": {
-      "type": "number",
-      "default": 0
-    },
-    "slideCount": {
-      "type": "number",
-      "default": 0
-    },
-    "currentSlide": {
-      "type": "number",
-      "default": 0
+      "type": "boolean",
+      "default": true
     }
-  },
-  "providesContext": {
-    "hizzle-slider/currentSlide": "currentSlide"
   },
   "supports": {
     "anchor": true,
+    "align": true,
+    "ariaLabel": true,
+    "color": {
+      "gradients": true,
+      "link": true
+    },
+    "dimensions": {
+      "minHeight": true
+    },
     "spacing": {
       "margin": true
     }

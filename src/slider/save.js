@@ -3,44 +3,26 @@
  */
 import { InnerBlocks, useBlockProps } from '@wordpress/block-editor';
 
-/**
- * Local dependencies
- */
-import {Paginate} from './paginate';
-import {Arrow} from './arrows';
-
 const Save = ( { attributes } ) => {
 
-	const {
-		centeredSlides,
-		loop,
-		pagination,
-		showArrows,
-		adaptHeight,
-		direction,
-		effect,
-		slidesPerView,
-		speed,
-		autoplay,
-		slideCount,
-		instanceID,
-	} = attributes;
+	const { slidesPerView, showArrows, autoplay, pagination } = attributes;
+
+	const sliderConfig = {
+		'data-per-page': slidesPerView,
+		'data-arrows': showArrows ? 'true' : 'false',
+		'data-pagination': pagination ? 'true' : 'false',
+		'data-autoplay': autoplay ? 'true' : 'false',
+	};
 
 	return (
 		<div { ...useBlockProps.save() }>
-			<div className="hizzle-slider" data-config={JSON.stringify({centeredSlides,loop,pagination,showArrows,adaptHeight,direction,effect,slidesPerView,speed,autoplay})}>
-
-				{showArrows && <Arrow total={slideCount} isLeft />}
-
-				<div className="hizzle-slider__slides">
-					<InnerBlocks.Content />
+			<section className="splide" {...sliderConfig}>
+				<div className="splide__track">
+					<ul class="splide__list">
+						<InnerBlocks.Content />
+					</ul>
 				</div>
-
-				{showArrows && <Arrow total={slideCount} isLeft={false} />}
-
-				{pagination && <Paginate total={ slideCount } />}
-
-			</div>
+			</section>
 		</div>
 	);
 };

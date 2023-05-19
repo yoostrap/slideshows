@@ -3,19 +3,28 @@
 	"version": "1.0.0",
 	"private": true,
 	"description": "WordPress Testimonials Plugin",
+	"author": "picocodes",
+	"license": "GPL-2.0-or-later",
+	"keywords": [
+		"slider"
+	],
+	"homepage": "https://github.com/hizzle-co/hizzle-slider#readme",
 	"repository": {
 		"type": "git",
 		"url": "git+https://github.com/hizzle-co/hizzle-slider.git"
 	},
-	"keywords": [
-		"slider"
-	],
-	"author": "picocodes",
-	"license": "GPL-3.0-or-later",
 	"bugs": {
 		"url": "https://github.com/hizzle-co/hizzle-slider/issues"
 	},
-	"homepage": "https://github.com/hizzle-co/hizzle-slider#readme",
+	"dependencies": {
+		"@splidejs/react-splide": "^0.7.12",
+		"@splidejs/splide": "^4.1.4",
+		"@wordpress/dom-ready": "^3.33.0",
+		"classnames": "^2.3.2"
+	},
+	"devDependencies": {
+		"@wordpress/scripts": "^26.4.0"
+	},
 	"scripts": {
 		"build": "wp-scripts build",
 		"check-engines": "wp-scripts check-engines",
@@ -30,13 +39,5 @@
 		"start": "wp-scripts start",
 		"test:e2e": "wp-scripts test-e2e",
 		"test:unit": "wp-scripts test-unit-js"
-	},
-	"devDependencies": {
-		"@wordpress/scripts": "^26.4.0"
-	},
-	"dependencies": {
-		"@splidejs/splide": "^4.1.4",
-		"@wordpress/dom-ready": "^3.33.0",
-		"classnames": "^2.3.2"
-	}
+	}	
 }
