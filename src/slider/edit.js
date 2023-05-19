@@ -5,9 +5,10 @@ import {
 	useInnerBlocksProps,
 	InspectorControls,
 	useBlockProps,
+	Inserter,
 } from '@wordpress/block-editor';
 import { createBlock } from '@wordpress/blocks';
-import { select } from '@wordpress/data';
+import { useSelect, dispatch } from '@wordpress/data';
 import {
 	PanelBody,
 	SelectControl,
@@ -16,12 +17,17 @@ import {
 	Button,
 } from '@wordpress/components';
 import { __ } from '@wordpress/i18n';
-import { Navigation, Pagination, Autoplay, EffectFade, EffectCube, EffectFlip, EffectCoverflow, EffectCards, EffectCreative } from 'swiper';
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { useMemo } from '@wordpress/element';
+import { useEffect, useState } from '@wordpress/element';
+
+/**
+ * Local dependencies
+ */
+import {PaginateEdit} from './paginate';
+import {ArrowEdit} from './arrows';
 
 // Template.
 const template = [ [ 'hizzle-slider/slide', {} ], [ 'hizzle-slider/slide', {} ], [ 'hizzle-slider/slide', {} ] ];
+
 
 export default function Edit( { attributes, setAttributes, clientId } ) {
 	const {
@@ -32,13 +38,27 @@ export default function Edit( { attributes, setAttributes, clientId } ) {
 		adaptHeight,
 		direction,
 		effect,
-		slidesPerView,
 		speed,
 		autoplay,
+		currentSlide,
+		slideCount,
 	} = attributes;
-	const insertedBlocks = useMemo( () => select( 'core/block-editor' ).getBlocks( clientId ), [ clientId ] );
-	const modules        = [ EffectFade, EffectCube, EffectFlip, EffectCoverflow, EffectCards, EffectCreative ];
-	const atts           = {};
+
+	// Container for the current index.
+	const [ currentIndex, setCurrentIndex ] = useState( 0 );
+
+	// Prepare block count and inserted blocks.
+	const { blockCount, insertedBlocks } = useSelect( select => ({
+		blockCount: select( 'core/block-editor' ).getBlockCount( clientId ),
+		insertedBlocks: select( 'core/block-editor' ).getBlocks( clientId ),
+	}));
+
+	// Ensure slide count matches block count.
+	useEffect( () => {
+		if ( blockCount !== slideCount ) {
+			setAttributes( { slideCount: blockCount } );
+		}
+	}, [blockCount] );
 
 	// Prepare innner blocks.
 	const { children, ...innerBlocksProps } = useInnerBlocksProps( useBlockProps(), {
@@ -46,25 +66,6 @@ export default function Edit( { attributes, setAttributes, clientId } ) {
 		template,
 	} );
 
-	// Add pagination.
-	if ( pagination ) {
-		modules.push( Pagination );
-		atts.pagination = {'el': '.swiper-pagination'};
-	}
-
-	// Add navigation arrows.
-	if ( showArrows ) {
-		modules.push( Navigation );
-		atts.navigation = {'nextEl': '.swiper-button-next', 'prevEl': '.swiper-button-prev'};
-	}
-
-	// Add autoplay.
-	if ( parseInt( autoplay ) > 0 ) {
-		modules.push( Autoplay );
-		atts.autoplay = {'delay': autoplay};
-	}
-
-	console.log(innerBlocksProps)
 	// Display the form.
 	return (
 		<>
@@ -153,42 +154,46 @@ export default function Edit( { attributes, setAttributes, clientId } ) {
 			</InspectorControls>
 
 			<div {...innerBlocksProps}>
-				<Swiper
-					centeredSlides={centeredSlides}
-					loop={loop}
-					adaptHeight={adaptHeight}
-					direction={direction}
-					speed={speed}
-					slidesPerView={parseInt(slidesPerView)}
-					effect={effect}
-					modules={modules}
-					{...atts}
-				>
-					{children}
-					<SwiperSlide>
-						<Button
-							className="add-slide"
-							label={ __( 'Add Slide', 'hizzle-slider' ) }
-							icon="plus"
-							onClick={ () => {
-								const newBlock = createBlock( 'hizzle-slider/slide' );
-								const newBlocks = [ ...insertedBlocks, newBlock ];
-								setAttributes( { content: newBlocks } );
-							} }
+				<div className="hizzle-slider">
+
+					{showArrows && (
+						<ArrowEdit
+							total={slideCount}
+							currentIndex={currentIndex}
+							setCurrentIndex={setCurrentIndex}
+							isLeft
 						/>
-					</SwiperSlide>
-				</Swiper>
+					)}
 
-				{pagination && (
-					<div className="swiper-pagination"></div>
-				)}
+					<div className="hizzle-slider__slides">
+						{children}
+						<div className="hizzle-slider__slide">
+							<Inserter clientId={clientId} />
+							<Button
+								className="add-slide"
+								label={ __( 'Add Slide', 'hizzle-slider' ) }
+								icon="plus"
+								onClick={ () => {
+									const newBlock = createBlock( 'hizzle-slider/slide' );
+									const newBlocks = [ ...insertedBlocks, newBlock ];
+									dispatch( 'core/block-editor' ).replaceBlocks( clientId, newBlocks );
+								} }
+							/>
+						</div>
+					</div>
 
-				{showArrows && (
-					<>
-						<div className="swiper-button-prev"></div>
-						<div className="swiper-button-next"></div>
-					</>
-				)}
+					{showArrows && (
+						<ArrowEdit
+							total={slideCount}
+							currentIndex={currentIndex}
+							setCurrentIndex={setCurrentIndex}
+							isLeft={ false }
+						/>
+					)}
+
+					{pagination && <PaginateEdit total={ blockCount + 1 } currentIndex={ currentIndex } setCurrentIndex={ setCurrentIndex } />}
+
+				</div>
 			</div>
 		</>
 	);

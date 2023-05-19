@@ -15,20 +15,20 @@ import classnames from 'classnames';
  */
 export default function Save ( { attributes } ) {
 
-		const borderProps  = getBorderClassesAndStyles( attributes );
-		const colorProps   = getColorClassesAndStyles( attributes );
-		const spacingProps = getSpacingClassesAndStyles( attributes );
-		const slideClasses = classnames(
-			'swiper-slide',
-			colorProps.className,
-			borderProps.className,
-			spacingProps.className,
-		);
-		const slideStyle   = {
-			...borderProps.style,
-			...colorProps.style,
-			...spacingProps.style,
-		};
+	const borderProps  = getBorderClassesAndStyles( attributes );
+	const colorProps   = getColorClassesAndStyles( attributes );
+	const spacingProps = getSpacingClassesAndStyles( attributes );
+	const slideClasses = classnames(
+		'hizzle-slider__slide',
+		colorProps.className,
+		borderProps.className,
+		spacingProps.className,
+	);
+	const slideStyle   = {
+		...borderProps.style,
+		...colorProps.style,
+		...spacingProps.style,
+	};
 
 	const blockProps = useBlockProps.save( { className: slideClasses, style: slideStyle } );
 

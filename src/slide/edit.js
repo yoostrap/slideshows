@@ -8,7 +8,6 @@ import {
 	__experimentalUseColorProps as useColorProps,
 	__experimentalGetSpacingClassesAndStyles as useSpacingProps,
 } from '@wordpress/block-editor';
-import { SwiperSlide } from 'swiper/react';
 
 // Template contains a single empty paragraph block.
 const template = [ [ 'core/paragraph', {} ] ];
@@ -21,8 +20,8 @@ export default function Edit({attributes}) {
 	const borderProps  = useBorderProps( attributes );
 	const colorProps   = useColorProps( attributes );
 	const spacingProps = useSpacingProps( attributes );
-	const blockProps   = useBlockProps( { className: 'swiper-slide', style: { ...borderProps.style, ...colorProps.style, ...spacingProps.style } } );
+	const blockProps   = useBlockProps( { className: 'hizzle-slider__slide', style: { ...borderProps.style, ...colorProps.style, ...spacingProps.style } } );
 	const innerProps   = useInnerBlocksProps( blockProps, {template} );
 
-	return <SwiperSlide {...innerProps} />;
+	return <div {...innerProps} />;
 };

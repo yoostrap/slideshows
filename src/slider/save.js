@@ -3,6 +3,12 @@
  */
 import { InnerBlocks, useBlockProps } from '@wordpress/block-editor';
 
+/**
+ * Local dependencies
+ */
+import {Paginate} from './paginate';
+import {Arrow} from './arrows';
+
 const Save = ( { attributes } ) => {
 
 	const {
@@ -16,25 +22,24 @@ const Save = ( { attributes } ) => {
 		slidesPerView,
 		speed,
 		autoplay,
+		slideCount,
+		instanceID,
 	} = attributes;
 
 	return (
 		<div { ...useBlockProps.save() }>
-			<div className="swiper" data-config={JSON.stringify({centeredSlides,loop,pagination,showArrows,adaptHeight,direction,effect,slidesPerView,speed,autoplay})}>
-				<div className="swiper-wrapper">
+			<div className="hizzle-slider" data-config={JSON.stringify({centeredSlides,loop,pagination,showArrows,adaptHeight,direction,effect,slidesPerView,speed,autoplay})}>
+
+				{showArrows && <Arrow total={slideCount} isLeft />}
+
+				<div className="hizzle-slider__slides">
 					<InnerBlocks.Content />
 				</div>
 
-				{pagination && (
-					<div class="swiper-pagination"></div>
-				)}
+				{showArrows && <Arrow total={slideCount} isLeft={false} />}
 
-				{showArrows && (
-					<>
-						<div class="swiper-button-prev"></div>
-						<div class="swiper-button-next"></div>
-					</>
-				)}
+				{pagination && <Paginate total={ slideCount } />}
+
 			</div>
 		</div>
 	);

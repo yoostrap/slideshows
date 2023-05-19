@@ -68,7 +68,18 @@
     "autoplay": {
       "type": "number",
       "default": 0
+    },
+    "slideCount": {
+      "type": "number",
+      "default": 0
+    },
+    "currentSlide": {
+      "type": "number",
+      "default": 0
     }
+  },
+  "providesContext": {
+    "hizzle-slider/currentSlide": "currentSlide"
   },
   "supports": {
     "anchor": true,
