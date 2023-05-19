@@ -8,7 +8,7 @@
  * Author URI: https://hizzle.co
  * Text Domain: hizzle-slideshows
  * Domain Path: /languages/
- * Requires at least: 5.5
+ * Requires at least: 6.0
  * Requires PHP: 7.0
  *
  */

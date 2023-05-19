@@ -6,7 +6,11 @@
 	"author": "picocodes",
 	"license": "GPL-2.0-or-later",
 	"keywords": [
-		"slider"
+		"slideshow",
+		"slider",
+		"testimonial",
+		"testimonials",
+		"testimonials slider"
 	],
 	"homepage": "https://github.com/hizzle-co/hizzle-slider#readme",
 	"repository": {

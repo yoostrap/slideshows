@@ -1,8 +1,8 @@
 $navigation-size: 44px !default;
 $navigation-top-offset: 50% !default;
 $color-primary: var(--wp--preset--color--primary, #0693e3) !default;
-$button-offset: var(--hizzle-slider-button-offset, 10px) !default;
+$button-offset: var(--hizzle-slideshows-button-offset, 10px) !default;
 
-.wp-block-hizzle-slider-slider{
+.wp-block-hizzle-slideshows-slideshow{
     @import "../../node_modules/@splidejs/splide/dist/css/themes/splide-sea-green.min";
 }

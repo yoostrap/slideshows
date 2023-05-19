@@ -1,12 +1,12 @@
 {
 	"$schema": "https://schemas.wp.org/trunk/block.json",
 	"apiVersion": 2,
-	"name": "hizzle-slider/slide",
-	"title": "Single Slide",
-	"description": "Displays a single slide in the slider.",
+	"name": "hizzle-slideshows/slide",
+	"title": "Slide",
+	"description": "Displays a single slide in a slideshow.",
 	"category": "design",
 	"keywords": [
-		"slider",
+		"slideshow",
 		"slide",
 		"testimonial",
 		"quote",
@@ -14,10 +14,10 @@
 	],
 	"icon": "media-default",
 	"parent": [
-		"hizzle-slider/slider"
+		"hizzle-slideshows/slideshow"
 	],
 	"version": "1.0.0",
-	"textdomain": "hizzle-slider",
+	"textdomain": "hizzle-slideshows",
 	"attributes": {},
 	"supports": {
 		"anchor": true,

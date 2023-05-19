@@ -1,12 +1,12 @@
 {
 	"$schema": "https://schemas.wp.org/trunk/block.json",
 	"apiVersion": 2,
-	"name": "hizzle-slider/slider",
-	"title": "Slider",
-	"description": "Displays content in a slider.",
+	"name": "hizzle-slideshows/slideshow",
+	"title": "Slideshow",
+	"description": "Displays a slideshow of images, testimonials, or other content",
 	"category": "design",
 	"keywords": [
-		"slider",
+		"slideshow",
 		"slide",
 		"testimonial",
 		"quote",
@@ -14,7 +14,7 @@
 	],
 	"icon": "admin-page",
 	"version": "1.0.0",
-	"textdomain": "hizzle-slider",
+	"textdomain": "hizzle-slideshows",
 	"attributes": {
 		"slidesPerView": {
 			"type": "number",
@@ -31,6 +31,14 @@
 		"autoplay": {
 			"type": "boolean",
 			"default": true
+		},
+		"isVertical": {
+			"type": "boolean",
+			"default": false
+		},
+		"type": {
+			"type": "string",
+			"default": "slide"
 		}
 	},
 	"supports": {
