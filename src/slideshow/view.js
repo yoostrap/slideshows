@@ -1,13 +1,31 @@
 /**
  * External dependencies
  */
-import domReady from '@wordpress/dom-ready';
 import Splide from '@splidejs/splide';
 
 /**
  * Internal dependencies
  */
 import './view.scss';
+
+/**
+ * Specify a function to execute when the DOM is fully loaded.
+ *
+ * @param {Callback} callback A function to execute after the DOM is ready.
+ *
+ * @return {void}
+ */
+function domReady(callback) {
+	if (typeof document === 'undefined') {
+		return;
+	}
+
+	if (document.readyState === 'complete' || document.readyState === 'interactive' ) {
+		return void callback();
+	}
+
+	document.addEventListener('DOMContentLoaded', callback);
+}
 
 domReady(() => {
 

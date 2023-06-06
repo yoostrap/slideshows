@@ -14,7 +14,7 @@ Convert anything into a slideshow
 == Description ==
 **Hizzle Slideshows is a lightweight slideshow plugin for WordPress.**
 
-This plugin allows you to effortlessly add slideshows into your posts or pages, taking your content presentation to new heights.
+This plugin allows you to effortlessly add slideshows to your posts or pages, taking your content presentation to new heights.
 
 To create a slideshow:-
 
