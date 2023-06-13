@@ -43,10 +43,7 @@ Furthermore, our plugin is optimized for performance, ensuring lightning-fast lo
 * Use the support forum on this page.
 
 == Screenshots ==
-1. Sample slideshow (back-end)
-2. Sample slideshow (front-end)
-2. Adding a new slide
-6. Configuration options
+1. Sample slideshow (front-end)
 
 == Changelog ==
 
