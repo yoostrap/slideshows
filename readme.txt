@@ -1,9 +1,9 @@
 === Hizzle Slideshows ===
-Contributors: picocodes, mutendebrian, hizzlewp
+Contributors: picocodes, mutendebrian, hizzlewp, lewisushindi
 Tags: block, slideshow, slider, testimonials, gallery
 Donate link: https://noptin.com/products/?utm_source=wp-repo&utm_medium=donate&utm_campaign=readme
 Requires at least: 6.0
-Tested up to: 6.2
+Tested up to: 6.4.3
 Requires PHP: 7.0
 Stable tag: 1.0.0
 License: GPL-3.0-or-later
