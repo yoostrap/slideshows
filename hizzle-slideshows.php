@@ -58,3 +58,4 @@ if ( !defined( 'HSS_SLUG' ) ) {
 
 // Include the includes file.
 require_once HSS_PATH . 'includes/includes.php';
+require_once HSS_PATH . 'includes/functions.php';
