@@ -5,7 +5,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 $logo                           = HSS_ASSETS_URL . 'logo.png';
 $version                        = 'version' . HSS_VERSION;
-$hizzle_slideshow_block_picture = HSS_ASSETS_URL . 'hizzle-slideshow-block.png';
+$hizzle_slideshow_block_picture = HSS_ASSETS_URL . 'Hizzle-slideshow-block.png';
 $hizzle_add_slide_picture       = HSS_ASSETS_URL . 'add-hizzle-slide.png';
 $hizzle_customize_slide_picture = HSS_ASSETS_URL . 'customize-hizzle-slide.png';
 $hizzle_slide_block_picture     = HSS_ASSETS_URL . 'hizzle-slide-block.png';
