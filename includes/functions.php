@@ -4,7 +4,7 @@
  * @return string
  */
 function hizzle_slideshows_plugin_name() {
-	return apply_filters( 'hizzle_slideshows_plugin_name', 'Slideshows' );
+	return apply_filters( 'hizzle_slideshows_plugin_name', 'Hizzle Slideshows' );
 }
 
 function hizzle_slideshows_help_page() {
