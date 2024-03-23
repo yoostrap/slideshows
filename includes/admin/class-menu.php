@@ -23,8 +23,8 @@ if ( ! class_exists( 'HizzleSlideshowsMenu' ) ) {
 		public function add_menu() {
 			// Add the main menu item.
 			add_menu_page(
-				__( 'Hizzle Slideshows', 'hizzle-slideshows' ),
-				__( 'Hizzle Slideshows', 'hizzle-slideshows' ),
+				__( hizzle_slideshows_plugin_name(), 'hizzle-slideshows' ),
+				__( hizzle_slideshows_plugin_name(), 'hizzle-slideshows' ),
 				'manage_options',
 				'hizzle_slideshows',
 				'hizzle_slideshows_help_page',
