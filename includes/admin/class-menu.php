@@ -22,13 +22,15 @@ if ( ! class_exists( 'HizzleSlideshowsMenu' ) ) {
 		 */
 		public function add_menu() {
 			// Add the main menu item.
+			$position = 26;
 			add_menu_page(
 				__( hizzle_slideshows_plugin_name(), 'hizzle-slideshows' ),
 				__( hizzle_slideshows_plugin_name(), 'hizzle-slideshows' ),
 				'manage_options',
 				'hizzle_slideshows',
 				'hizzle_slideshows_help_page',
-				'dashicons-slides'
+				'dashicons-slides',
+				$position
 			);
 			add_submenu_page(
 				'hizzle_slideshows',
