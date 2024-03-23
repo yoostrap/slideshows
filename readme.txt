@@ -1,55 +1,59 @@
 === Hizzle Slideshows ===
 Contributors: picocodes, mutendebrian, hizzlewp, lewisushindi
-Tags: block, slideshow, slider, testimonials, gallery
+Tags: block, slideshow, slider, testimonials, gallery, post slider, wordpress slider
 Donate link: https://noptin.com/products/?utm_source=wp-repo&utm_medium=donate&utm_campaign=readme
 Requires at least: 6.0
-Tested up to: 6.4.3
+Tested up to: 6.5
 Requires PHP: 7.0
-Stable tag: 1.0.2
+Stable tag: 1.0.3
 License: GPL-3.0-or-later
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 
-Convert anything into a slideshow
+== Convert Anything into Stunning Slideshows ==
+
+**Hizzle Slideshows** empowers you to effortlessly create captivating slideshows for your WordPress website.
 
 == Description ==
-**Hizzle Slideshows is a lightweight slideshow plugin for WordPress.**
 
-This plugin allows you to effortlessly add slideshows to your posts or pages, taking your content presentation to new heights.
+Unleash the power of visual storytelling with **Hizzle Slideshows** – a lightweight plugin designed to elevate your content presentation to new heights.
 
-To create a slideshow:-
+### Effortless Slide Creation
+With Hizzle Slideshows, crafting engaging slideshows is as simple as a few clicks. Seamlessly integrated with the WordPress block editor, you can add slides to your posts or pages with ease.
 
-Open any post or page in the new WordPress block editor then add the Hizzle Slideshow block.
+### Tailor to Your Needs
+Whether you're showcasing a product gallery, presenting a step-by-step tutorial, or adding an interactive element to your content, our plugin offers unparalleled flexibility. Customize each slide to perfectly match your vision.
 
-You can then add as many slides as you want, tailoring each one to suit your specific needs. Whether it's showcasing a product gallery, presenting a step-by-step tutorial, or simply adding an engaging visual element to your content, our plugin delivers on all fronts.
+### Intuitive Interface
+Our user-friendly interface makes adding content a breeze. Insert images, text, videos, or any other block effortlessly – no coding skills required.
 
-Adding content to each slide is a breeze, thanks to our intuitive and user-friendly interface. You can effortlessly insert images, text, videos, or any other block you have at your disposal.
+### Fully Responsive
+Rest assured that your slideshows will look stunning on any device. Hizzle Slideshows are optimized for responsiveness, ensuring a seamless user experience across desktops, tablets, and smartphones.
 
-This is becuase Hizzle Slideshows seamlessly integrate with the WordPress block editor, ensuring a familiar and streamlined experience for you. No coding skills are required – simply add your desired blocks, arrange them as desired, and watch your slideshow come to life!
-
-Additionally, this plugin is designed to be fully responsive, guaranteeing that the slideshows look stunning on any device, be it a desktop, tablet, or smartphone. In today's mobile-driven world, it's crucial to provide an exceptional user experience across all platforms, and our plugin does just that.
-
-Furthermore, our plugin is optimized for performance, ensuring lightning-fast loading times. We understand the importance of speed in today's digital landscape, and our plugin has been fine-tuned to deliver optimal performance, guaranteeing a smooth and immersive browsing experience for readers.
+### Lightning-Fast Performance
+We understand the importance of speed in today's digital landscape. That's why our plugin is optimized for performance, guaranteeing lightning-fast loading times and an immersive browsing experience for your audience.
 
 == Installation ==
-* Go to WordPress Dashboard.
-* Click on Plugins -> Add New
-* Search for **Hizzle Slideshows**
-* Find the plugin then click on the Install Now button
-* After installation, click on Activate Plugin link to activate the plugin.
+1. Go to your WordPress Dashboard.
+2. Navigate to Plugins -> Add New.
+3. Search for **Hizzle Slideshows**.
+4. Click the "Install Now" button.
+5. Once installed, activate the plugin via the "Activate Plugin" link.
 
-== Frequently Asked Questions ==
-= How can I get support? =
-
-* Use the support forum on this page.
+== Need Help? ==
+For support and assistance, visit our support forum on this page.
 
 == Screenshots ==
 1. Sample slideshow (front-end)
 
 == Changelog ==
 
+= 1.0.3 =
+* [NEW] Added blueprint.json file for users' preview in WordPress, enhancing the user experience by providing a visual representation of the plugin's functionality before installation.
+* [FIX] Resolved image display error in the help page.
+
 = 1.0.2 =
-* Added plugin menu for easier access
-* Introduced a help submenu page for user guidance
+* [NEW] Added plugin menu for easier access.
+* [NEW] Introduced a help submenu page for user guidance.
 
 = 1.0.0 =
 * Initial Release
