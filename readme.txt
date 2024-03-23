@@ -44,6 +44,7 @@ For support and assistance, visit our support forum on this page.
 
 == Screenshots ==
 1. Sample slideshow (front-end)
+2. Add as many slides as you want
 
 == Changelog ==
 
