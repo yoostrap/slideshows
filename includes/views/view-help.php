@@ -3,16 +3,27 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-$logo = HSS_ASSETS_URL . 'logo.png';
+$logo                           = HSS_ASSETS_URL . 'logo.png';
+$version                        = 'version' . HSS_VERSION;
 $hizzle_slideshow_block_picture = HSS_ASSETS_URL . 'hizzle-slideshow-block.png';
-$hizzle_add_slide_picture = HSS_ASSETS_URL . 'add-hizzle-slide.png';
+$hizzle_add_slide_picture       = HSS_ASSETS_URL . 'add-hizzle-slide.png';
 $hizzle_customize_slide_picture = HSS_ASSETS_URL . 'customize-hizzle-slide.png';
-$hizzle_slide_block_picture = HSS_ASSETS_URL . 'hizzle-slide-block.png';
+$hizzle_slide_block_picture     = HSS_ASSETS_URL . 'hizzle-slide-block.png';
 
-$plugin_name = hizzle_slideshows_plugin_name();
-$tagline = sprintf( __( 'Thank You For choosing %s!', 'hizzle-slideshows' ), $plugin_name );
+$plugin_name     = hizzle_slideshows_plugin_name();
+$tagline         = sprintf(
+	__(
+		'Thank You For choosing %s!', 'hizzle-slideshows'
+		),
+	$plugin_name
+);
 $tagline_content = sprintf( 
-    __( 'Transform your galleries with %1$s, the ultimate WordPress plugin for creating stunning, responsive presentations. Effortlessly customize each slide with our intuitive interface. Enjoy seamless integration with the block editor, ensuring a flawless experience on all devices. With optimized performance, your slideshows load lightning-fast, captivating your audience like never before. Upgrade your content presentation today with %2$s.', 'hizzle-slideshows' ), 
+    __( 'Transform your galleries with %1$s, the ultimate WordPress plugin for creating stunning,
+	 responsive presentations. Effortlessly customize each slide with our intuitive interface.
+	  Enjoy seamless integration with the block editor, ensuring a flawless experience on all devices.
+	   With optimized performance, your slideshows load lightning-fast,
+	    captivating your audience like never before.
+		 Upgrade your content presentation today with %2$s.', 'hizzle-slideshows' ),
     $plugin_name, 
     $plugin_name 
 );
@@ -20,11 +31,12 @@ $tagline_content = sprintf(
 $logo = apply_filters( 'hizzle_slideshows_admin_help_logo_url', $logo );
 
 ?>
-<section style="background-color: #333; margin-right: 15px; margin-top: 15px; padding-bottom: 15px; min-height: 100svh;">
-	<div class="hizzle-slideshows-help-main">
+<section style="background-color: #333; margin-right: 15px; margin-top: 15px; padding-bottom: 15px; min-height: 100vh; position: relative;">
+    <div class="hizzle-slideshows-plugin-version" style="position: absolute; top: 30px; right: 0; color: white; padding: 5px 10px; transform: rotate(45deg);"><?php esc_html_e( $version, 'hizzle-slideshows' ); ?></div>
+    <div class="hizzle-slideshows-help-main">
 		<img src="<?php echo $logo; ?>" width="200">
 		<h1 style="color: whitesmoke;"><?php esc_html_e( $plugin_name, 'hizzle-slideshows' ); ?></h1>
-	</div>            
+	</div>
 		
 	<div class="hizzle-slideshows-help-tabs">
 		<ul class="hizzle-slideshows-help-tab-links">
@@ -125,6 +137,11 @@ $logo = apply_filters( 'hizzle_slideshows_admin_help_logo_url', $logo );
 </script>
 
 <style>
+	.hizzle-slideshows-plugin-version {
+		font-size: 12px;
+		font-weight: bold;
+	}
+
 	.hizzle-slideshows-help-tabs {
 		font-family: Arial, sans-serif;
 		padding-left: 10px;
