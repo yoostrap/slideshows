@@ -72,3 +72,23 @@ function hizzle_slideshows_plugin_listing_links( $links ) {
 	return $links;
 }
 add_filter( 'plugin_action_links_' . plugin_basename( __FILE__ ), 'hizzle_slideshows_plugin_listing_links' );
+
+/**
+ * Redirect to the settings page after plugin activation.
+ */
+function hizzle_slideshows_redirect_to_help_page() {
+	if ( is_admin() && get_option( 'hizzle_slideshows_activation_redirect', false ) ) {
+		delete_option( 'hizzle_slideshows_activation_redirect' );
+		wp_safe_redirect( admin_url( 'admin.php?page=hizzle_slideshows_help' ) );
+		exit;
+	}
+}
+register_activation_hook( __FILE__, 'hizzle_slideshows_set_activation_redirect' );
+
+/**
+ * Set the activation redirect flag.
+ */
+function hizzle_slideshows_set_activation_redirect() {
+	update_option( 'hizzle_slideshows_activation_redirect', true );
+}
+add_action( 'admin_init', 'hizzle_slideshows_redirect_to_help_page' );
