@@ -49,8 +49,10 @@ For support and assistance, visit our support forum on this page.
 == Changelog ==
 
 = 1.0.3 =
-* [NEW] Added blueprint.json file for users' preview in WordPress, enhancing the user experience by providing a visual representation of the plugin's functionality before installation.
-* [FIX] Resolved image display error in the help page.
+* [ENHANCEMENT] Added 5+ filters for more customization.
+* [NEW] Freemius integration!
+* [FIX] Bug fixes and enhancements.
+* [NEW] Added blueprint.json file for users' preview in WordPress.
 
 = 1.0.2 =
 * [NEW] Added plugin menu for easier access.
