@@ -15,6 +15,45 @@
 
 defined( 'ABSPATH' ) || exit;
 
+if ( ! function_exists( 'hs_fs' ) ) {
+    // Create a helper function for easy SDK access.
+    function hs_fs() {
+        global $hs_fs;
+
+        if ( ! isset( $hs_fs ) ) {
+            // Activate multisite network integration.
+            if ( ! defined( 'WP_FS__PRODUCT_15268_MULTISITE' ) ) {
+                define( 'WP_FS__PRODUCT_15268_MULTISITE', true );
+            }
+
+            // Include Freemius SDK.
+            require_once dirname(__FILE__) . '/freemius/start.php';
+
+            $hs_fs = fs_dynamic_init( array(
+                'id'                  => '15268',
+                'slug'                => 'hizzle-slideshows',
+                'type'                => 'plugin',
+                'public_key'          => 'pk_3917799e2e105350f711f9e679a9d',
+                'is_premium'          => false,
+                'has_addons'          => false,
+                'has_paid_plans'      => false,
+                'menu'                => array(
+                    'slug'           => 'hizzle-slideshows',
+                    'first-path'     => 'admin.php?page=hizzle_slideshows_help',
+                    'network'        => true,
+                ),
+            ) );
+        }
+
+        return $hs_fs;
+    }
+
+    // Init Freemius.
+    hs_fs();
+    // Signal that SDK was initiated.
+    do_action( 'hs_fs_loaded' );
+}
+
 // Define some essentials constants.
 if ( !defined( 'HSS_SLUG' ) ) {
     define( 'HSS_SLUG', 'hizzle-slideshows' );
@@ -72,23 +111,3 @@ function hizzle_slideshows_plugin_listing_links( $links ) {
 	return $links;
 }
 add_filter( 'plugin_action_links_' . plugin_basename( __FILE__ ), 'hizzle_slideshows_plugin_listing_links' );
-
-/**
- * Redirect to the settings page after plugin activation.
- */
-function hizzle_slideshows_redirect_to_help_page() {
-	if ( is_admin() && get_option( 'hizzle_slideshows_activation_redirect', false ) ) {
-		delete_option( 'hizzle_slideshows_activation_redirect' );
-		wp_safe_redirect( admin_url( 'admin.php?page=hizzle_slideshows_help' ) );
-		exit;
-	}
-}
-register_activation_hook( __FILE__, 'hizzle_slideshows_set_activation_redirect' );
-
-/**
- * Set the activation redirect flag.
- */
-function hizzle_slideshows_set_activation_redirect() {
-	update_option( 'hizzle_slideshows_activation_redirect', true );
-}
-add_action( 'admin_init', 'hizzle_slideshows_redirect_to_help_page' );
