@@ -27,20 +27,20 @@ if ( ! class_exists( 'HizzleSlideshowsMenu' ) ) {
 				__( hizzle_slideshows_plugin_name(), 'hizzle-slideshows' ),
 				__( hizzle_slideshows_plugin_name(), 'hizzle-slideshows' ),
 				'manage_options',
-				'hizzle_slideshows',
+				hizzle_slideshows_top_level_menu_slug(),
 				'hizzle_slideshows_help_page',
-				'dashicons-slides',
+				hizzle_slideshows_dashicons(),
 				$position
 			);
 			add_submenu_page(
-				'hizzle_slideshows',
+				hizzle_slideshows_top_level_menu_slug(),
 				__( 'Help', 'hizzle-slideshows' ),
 				__( 'Help', 'hizzle-slideshows' ),
 				'manage_options',
 				'hizzle_slideshows_help',
 				'hizzle_slideshows_help_page'
 			);
-			remove_submenu_page( 'hizzle_slideshows', 'hizzle_slideshows' );			
+			remove_submenu_page( hizzle_slideshows_top_level_menu_slug(), hizzle_slideshows_top_level_menu_slug() );			
 		}
 	}
 }
