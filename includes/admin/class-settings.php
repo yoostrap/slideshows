@@ -38,14 +38,6 @@ if ( ! class_exists( 'Hizzle_Slideshows_Admin_Settings' ) ) {
 		 * @return array
 		 */
 		public function register_settings( $registered_settings ) {
-			$roles        = get_editable_roles();
-			$role_choices = array(
-				'' => __( 'No Default', 'foogallery' )
-			);
-
-			foreach ( $roles as $role_slug => $role_data ) {
-				$role_choices[ $role_slug ] = $role_data['name'];
-			}
 			$new_settings = array(
 				array(
 					'id'      => 'slideshow_creator_role',
