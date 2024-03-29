@@ -88,16 +88,28 @@ add_action( 'init', 'hizzle_slideshows_load_textdomain' );
  * Passes translations to JavaScript.
  */
 function hizzle_slideshows_register_block() {
+    // Retrieve the selected user role from the settings
+    $allowed_role = get_option( 'slideshow_creator_role' );
 
-	// Register the block by passing the location of block.json to register_block_type.
-	register_block_type( HSS_PATH . 'build/slideshow' );
-    register_block_type( HSS_PATH . 'build/slide' );
+    // Get the current user's role
+    $current_user = wp_get_current_user();
+    $current_user_roles = $current_user->roles;
 
-	if ( function_exists( 'wp_set_script_translations' ) ) {
-		wp_set_script_translations( 'hizzle-slideshows-slideshow', 'hizzle-slideshows' );
-	}
+    // Check if the current user's role matches the allowed role
+    if ( ! in_array( $allowed_role, $current_user_roles ) ) {
+        // If not allowed, unregister the slideshow block
+        unregister_block_type( 'hizzle-slideshows/slideshow' );
+    } else {
+        // If allowed, register the block
+        register_block_type( HSS_PATH . 'build/slideshow' );
+        register_block_type( HSS_PATH . 'build/slide' );
+    }
+
+    if (function_exists('wp_set_script_translations')) {
+        wp_set_script_translations('hizzle-slideshows-slideshow', 'hizzle-slideshows');
+    }
 }
-add_action( 'init', 'hizzle_slideshows_register_block' );
+add_action('init', 'hizzle_slideshows_register_block');
 
 /**
  * Add custom action link to the plugin's action links.
