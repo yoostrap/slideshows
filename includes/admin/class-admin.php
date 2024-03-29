@@ -16,7 +16,7 @@ if ( ! class_exists( 'Hizzle_Slideshows_Admin ' ) ) {
 		function __construct() {
 			//init some other actions
 			add_action( 'init', array( $this, 'init' ) );
-			new HizzleSlideshowsMenu();
+			new HizzleSlideshowsMenu();			
 		}
 
 		function init() {			
