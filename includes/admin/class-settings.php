@@ -88,18 +88,22 @@ if ( ! class_exists( 'Hizzle_Slideshows_Admin_Settings' ) ) {
 				<form method="post" action="options.php">
 
 					<?php foreach ( $this->settings as $setting ) : ?>
-						<div class="hizzle-settings-field">
-							<label for="<?php echo $setting['id']; ?>"><?php echo $setting['title']; ?></label>
-							<?php if ( $setting['type'] === 'select' ) : ?>
-								<select name="<?php echo $setting['id']; ?>" id="<?php echo $setting['id']; ?>">
-									<?php foreach ( $setting['choices'] as $value => $label ) : ?>
-										<option value="<?php echo $value; ?>" <?php selected( get_option( $setting['id'] ), $value ); ?>><?php echo $label; ?></option>
-									<?php endforeach; ?>
-								</select>
-							<?php else : ?>
-								<input type="<?php echo $setting['type']; ?>" name="<?php echo $setting['id']; ?>" id="<?php echo $setting['id']; ?>" value="<?php echo esc_attr( get_option( $setting['id'], $setting['default'] ) ); ?>" />
-							<?php endif; ?>
-							<p class="description"><?php echo $setting['desc']; ?></p>
+						<div class="hizzle-settings-field" style="display: flex; margin-top: 10px;">
+							<div style="margin-right: 15px;">
+								<label for="<?php echo $setting['id']; ?>"><?php echo $setting['title']; ?></label>
+							</div>
+							<div>
+								<?php if ( $setting['type'] === 'select' ) : ?>
+									<select name="<?php echo $setting['id']; ?>" id="<?php echo $setting['id']; ?>">
+										<?php foreach ( $setting['choices'] as $value => $label ) : ?>
+											<option value="<?php echo $value; ?>" <?php selected( get_option( $setting['id'] ), $value ); ?>><?php echo $label; ?></option>
+										<?php endforeach; ?>
+									</select>
+								<?php else : ?>
+									<input type="<?php echo $setting['type']; ?>" name="<?php echo $setting['id']; ?>" id="<?php echo $setting['id']; ?>" value="<?php echo esc_attr( get_option( $setting['id'], $setting['default'] ) ); ?>" />
+								<?php endif; ?>
+								<p class="description"><?php echo $setting['desc']; ?></p>
+							</div>
 						</div>
 					<?php endforeach; ?>
 					<?php submit_button(); ?>
