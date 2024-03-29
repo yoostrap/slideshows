@@ -91,25 +91,33 @@ function hizzle_slideshows_register_block() {
     // Retrieve the selected user role from the settings
     $allowed_role = get_option( 'slideshow_creator_role' );
 
-    // Get the current user's role
-    $current_user = wp_get_current_user();
-    $current_user_roles = $current_user->roles;
-
-    // Check if the current user's role matches the allowed role
-    if ( ! in_array( $allowed_role, $current_user_roles ) ) {
-        // If not allowed, unregister the slideshow block
-        unregister_block_type( 'hizzle-slideshows/slideshow' );
-    } else {
-        // If allowed, register the block
+    // Check if the allowed role is set to "No Default" (empty)
+    if ( $allowed_role === '' ) {
+        // If set to "No Default", allow all users to create a slideshow
         register_block_type( HSS_PATH . 'build/slideshow' );
         register_block_type( HSS_PATH . 'build/slide' );
+    } else {
+        // Get the current user's role
+        $current_user = wp_get_current_user();
+        $current_user_roles = $current_user->roles;
+
+        // Check if the current user's role matches the allowed role
+        if ( ! in_array( $allowed_role, $current_user_roles ) ) {
+            // If not allowed, unregister the slideshow block
+            unregister_block_type( 'hizzle-slideshows/slideshow' );
+        } else {
+            // If allowed, register the block
+            register_block_type( HSS_PATH . 'build/slideshow' );
+            register_block_type( HSS_PATH . 'build/slide' );
+        }
     }
 
-    if (function_exists('wp_set_script_translations')) {
-        wp_set_script_translations('hizzle-slideshows-slideshow', 'hizzle-slideshows');
+    if ( function_exists( 'wp_set_script_translations' ) ) {
+        wp_set_script_translations( 'hizzle-slideshows-slideshow', 'hizzle-slideshows' );
     }
 }
-add_action('init', 'hizzle_slideshows_register_block');
+add_action( 'init', 'hizzle_slideshows_register_block' );
+
 
 /**
  * Add custom action link to the plugin's action links.
