@@ -38,18 +38,26 @@ if ( ! class_exists( 'Hizzle_Slideshows_Admin_Settings' ) ) {
 		 * @return array
 		 */
 		public function register_settings( $registered_settings ) {
+			$roles        = get_editable_roles();
+			$role_choices = array(
+				'' => __( 'No Default', 'foogallery' )
+			);
+
+			foreach ( $roles as $role_slug => $role_data ) {
+				$role_choices[ $role_slug ] = $role_data['name'];
+			}
 			$new_settings = array(
 				array(
 					'id'      => 'slideshow_creator_role',
 					'title'   => __( 'Slideshow creator role', 'hizzle-slideshows' ),
-					'desc'    => __( 'Manage who can create your slideshows', 'hizzle-slideshows' ),
+					'desc'    => __( 'Select the user role allowed to create slideshows', 'hizzle-slideshows' ),
 					'default' => '',
 					'type'    => 'select',
-					'choices' => $this->get_roles(),
+					'choices' => $this->hizzle_slideshows_get_roles(),
 					'tab'     => 'general',
 					'section' => __( 'Admin', 'hizzle-slideshows' )
 				),
-				// Add more settings as needed in the future
+				// We will Add more settings as needed in the future.
 			);
 
 			// Allow modification of the settings array through a filter hook
@@ -101,15 +109,28 @@ if ( ! class_exists( 'Hizzle_Slideshows_Admin_Settings' ) ) {
 		}
 		
 		/**
-		 * Dummy function to retrieve roles.
-		 * You should replace this with your actual function to get roles.
+		 * Get roles.
+		 *
+		 * @return array
 		 */
-		private function get_roles() {
-			return array(
-				'hs-default' => 'No Default',
-				'role2' => 'Role 2',
+		private function hizzle_slideshows_get_roles() {
+			$roles        = get_editable_roles();
+			$role_choices = array(
+				'' => __( 'No Default', 'foogallery' )
 			);
+
+			foreach ( $roles as $role_slug => $role_data ) {
+				$role_choices[ $role_slug ] = $role_data['name'];
+			}
+
+			/**
+			 * Filter the role choices array before returning.
+			 *
+			 * @param array $role_choices The role choices array.
+			 */
+			return apply_filters( 'hizzle_slideshows_get_user_roles', $role_choices );
 		}
+
 	}
 }
 new Hizzle_Slideshows_Admin_Settings();

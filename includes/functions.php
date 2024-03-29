@@ -23,6 +23,9 @@ function hizzle_slideshows_dashicons() {
     return apply_filters( 'hizzle_slideshows_dashicons', 'dashicons-slides' );
 }
 
+/**
+ * Display the help page for the plugin.
+ */
 function hizzle_slideshows_help_page() {
     require_once HSS_PATH . 'includes/views/view-help.php';
 }
