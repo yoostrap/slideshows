@@ -73,8 +73,51 @@ if ( ! class_exists( 'Hizzle_Slideshows_Admin_Settings' ) ) {
 		 */
 		public function initialize_settings() {
 			foreach ( $this->settings as $setting ) {
+				// Register setting
 				register_setting( 'hizzle_slideshows_settings', $setting['id'] );
+
+				// Add settings section
+				add_settings_section(
+					$setting['id'],
+					$setting['section'],
+					function() { }, // Empty callback, as we don't need to output anything for the section
+					'hizzle_slideshows_settings_page'
+				);
+
+				// Add settings field
+				add_settings_field(
+					$setting['id'],
+					$setting['title'],
+					array( $this, 'render_setting_field' ),
+					'hizzle_slideshows_settings_page',
+					$setting['id'],
+					array( 'id' => $setting['id'], 'type' => $setting['type'], 'choices' => $setting['choices'], 'desc' => $setting['desc'] )
+				);
 			}
+		}
+
+		/**
+		 * Render setting field.
+		 *
+		 * @param array $args Arguments passed from add_settings_field function.
+		 */
+		public function render_setting_field( $args ) {
+			$setting_id = $args['id'];
+			$setting_type = $args['type'];
+			$setting_choices = $args['choices'];
+			$setting_desc = $args['desc'];
+
+			if ( $setting_type === 'select' ) {
+				echo '<select name="' . $setting_id . '" id="' . $setting_id . '">';
+				foreach ( $setting_choices as $value => $label ) {
+					echo '<option value="' . $value . '" ' . selected( get_option( $setting_id ), $value, false ) . '>' . $label . '</option>';
+				}
+				echo '</select>';
+			} else {
+				echo '<input type="' . $setting_type . '" name="' . $setting_id . '" id="' . $setting_id . '" value="' . esc_attr( get_option( $setting_id, '' ) ) . '" />';
+			}
+
+			echo '<p class="description">' . $setting_desc . '</p>';
 		}
 
 		/**
@@ -87,25 +130,14 @@ if ( ! class_exists( 'Hizzle_Slideshows_Admin_Settings' ) ) {
 				<h2><?php _e( 'Hizzle Slideshows Settings', 'hizzle-slideshows' ); ?></h2>
 				<form method="post" action="options.php">
 
-					<?php foreach ( $this->settings as $setting ) : ?>
-						<div class="hizzle-settings-field" style="display: flex; margin-top: 10px;">
-							<div style="margin-right: 15px;">
-								<label for="<?php echo $setting['id']; ?>"><?php echo $setting['title']; ?></label>
-							</div>
-							<div>
-								<?php if ( $setting['type'] === 'select' ) : ?>
-									<select name="<?php echo $setting['id']; ?>" id="<?php echo $setting['id']; ?>">
-										<?php foreach ( $setting['choices'] as $value => $label ) : ?>
-											<option value="<?php echo $value; ?>" <?php selected( get_option( $setting['id'] ), $value ); ?>><?php echo $label; ?></option>
-										<?php endforeach; ?>
-									</select>
-								<?php else : ?>
-									<input type="<?php echo $setting['type']; ?>" name="<?php echo $setting['id']; ?>" id="<?php echo $setting['id']; ?>" value="<?php echo esc_attr( get_option( $setting['id'], $setting['default'] ) ); ?>" />
-								<?php endif; ?>
-								<p class="description"><?php echo $setting['desc']; ?></p>
-							</div>
-						</div>
-					<?php endforeach; ?>
+					<?php 
+					// Output security fields for the registered setting section 'hizzle_slideshows_settings'
+					settings_fields( 'hizzle_slideshows_settings' );
+
+					// Output settings sections and their fields
+					do_settings_sections( 'hizzle_slideshows_settings_page' );
+					?>
+					
 					<?php submit_button(); ?>
 				</form>
 			</div>
