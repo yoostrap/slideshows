@@ -5,20 +5,19 @@ Donate link: https://noptin.com/products/?utm_source=wp-repo&utm_medium=donate&u
 Requires at least: 6.0
 Tested up to: 6.5
 Requires PHP: 7.0
-Stable tag: 1.0.3
+Stable tag: 1.0.4
 License: GPL-3.0-or-later
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 
-== Transform Your Ideas into Dynamic Presentations ==
-
-**Hizzle Slideshows** empowers you to transform your content into captivating visual journeys, setting the stage for a remarkable user experience on your WordPress website.
+The best WordPress slideshow plugin. Convert anything into a slideshow.
 
 == Description ==
 
-Unlock the potential of your storytelling with **Hizzle Slideshows** – a plugin meticulously crafted to redefine how you present your content online.
+== Lightweight, responsive and easy to use WordPress slideshow plugin ==
+Bring back the magic to WordPress slideshows with Hizzle Slideshows. Create stunning slideshows effortlessly and delight your viewers like never before.
 
 ### Craftsmanship in Every Detail
-At Hizzle, we adhere to the core principles of lightweight design, speed, and responsiveness. Our plugin is engineered to be feather-light, ensuring seamless performance without compromising on functionality.
+We adhere to the core principles of lightweight design, speed, and responsiveness. Our plugin is engineered to be feather-light, ensuring seamless performance without compromising on functionality.
 
 ### Seamlessness at Your Fingertips
 Creating stunning slideshows is a breeze with Hizzle Slideshows. Seamlessly integrated into the WordPress block editor, you can effortlessly add slides to your posts or pages, unleashing your creativity without constraints.
@@ -54,20 +53,20 @@ For dedicated support and assistance, visit our support forum on this page.
 - Utilize Autoplay for dynamic presentations.
 - Customize appearance to match your brand.
 - Toggle pagination visibility as per your preference.
-- Set dimensions and borders to images for precise control.
-- Maintain image aspect ratio for a polished look.
-- Expand images on click for enhanced viewing.
-- Fine-tune image scale for perfect presentation.
-- Apply filters for creative effects, including two-tone color transformations while retaining the original image integrity.
+- Restrict slideshow creation based on user roles for enhanced security.
 
 == Screenshots ==
 1. Sample slideshow (front-end)
 2. Add as many slides as you want
+3. Sample product slideshow (front-end)
 
 == Changelog ==
+= 1.0.4 =
+* [NEW] Added feature to restrict slideshow creation based on user roles for enhanced security.
+* [ENHANCEMENT] Enhanced plugin extensibility by adding additional filters and hooks for developers to customize functionality.
 
 = 1.0.3 =
-* [ENHANCEMENT] Added 5+ filters for more customization.
+* [ENHANCEMENT] Added filters  and hooks for plugin customization.
 * [NEW] Freemius integration!
 * [FIX] Bug fixes and enhancements.
 * [NEW] Added blueprint.json file for users' preview in WordPress.

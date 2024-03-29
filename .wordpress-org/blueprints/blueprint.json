@@ -15,7 +15,7 @@
             "step": "installPlugin",
             "pluginZipFile": {
                 "resource": "url",
-                "url": "https:\/\/downloads.wordpress.org\/plugin\/hizzle-slideshows.1.0.3.zip"
+                "url": "https:\/\/downloads.wordpress.org\/plugin\/hizzle-slideshows.1.0.4.zip"
             },
             "options": {
                 "activate": true

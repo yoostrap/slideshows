@@ -3,7 +3,7 @@
  * Plugin Name: Hizzle Slideshows
  * Plugin URI: https://hizzle.co/slideshows
  * Description: Convert anything into a slideshow.
- * Version: 1.0.3
+ * Version: 1.0.4
  * Author: Hizzle
  * Author URI: https://hizzle.co
  * Text Domain: hizzle-slideshows
@@ -63,7 +63,7 @@ if ( !defined( 'HSS_SLUG' ) ) {
     define( 'HSS_URL', plugin_dir_url( __FILE__ ) );
     define( 'HSS_ASSETS_URL', HSS_URL . 'assets/' );
     define( 'HSS_FILE', __FILE__ );
-    define( 'HSS_VERSION', '1.0.3' );
+    define( 'HSS_VERSION', '1.0.4' );
     define( 'HSS_MIN_PHP', '7.0.0' );
     define( 'HSS_MIN_WP', '6.0.0' );
 }
@@ -89,7 +89,7 @@ add_action( 'init', 'hizzle_slideshows_load_textdomain' );
  */
 function hizzle_slideshows_register_block() {
     // Retrieve the selected user role from the settings
-    $allowed_role = get_option( 'slideshow_creator_role' );
+    $allowed_role = hizzle_slideshows_get_setting( 'slideshow_creator_role' );
 
     // Check if the allowed role is set to "No Default" (empty)
     if ( $allowed_role === '' ) {

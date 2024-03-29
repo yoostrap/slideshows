@@ -102,11 +102,11 @@ if ( ! class_exists( 'Hizzle_Slideshows_Admin_Settings' ) ) {
 			if ( $setting_type === 'select' ) {
 				echo '<select name="' . $setting_id . '" id="' . $setting_id . '">';
 				foreach ( $setting_choices as $value => $label ) {
-					echo '<option value="' . $value . '" ' . selected( get_option( $setting_id ), $value, false ) . '>' . $label . '</option>';
+					echo '<option value="' . $value . '" ' . selected( hizzle_slideshows_get_setting( $setting_id ), $value, false ) . '>' . $label . '</option>';
 				}
 				echo '</select>';
 			} else {
-				echo '<input type="' . $setting_type . '" name="' . $setting_id . '" id="' . $setting_id . '" value="' . esc_attr( get_option( $setting_id, '' ) ) . '" />';
+				echo '<input type="' . $setting_type . '" name="' . $setting_id . '" id="' . $setting_id . '" value="' . esc_attr( hizzle_slideshows_get_setting( $setting_id, '' ) ) . '" />';
 			}
 
 			echo '<p class="description">' . $setting_desc . '</p>';
@@ -144,7 +144,7 @@ if ( ! class_exists( 'Hizzle_Slideshows_Admin_Settings' ) ) {
 		private function hizzle_slideshows_get_roles() {
 			$roles        = get_editable_roles();
 			$role_choices = array(
-				'' => __( 'No Default', 'foogallery' )
+				'' => __( 'No Default', 'hizzle-slideshows' )
 			);
 
 			foreach ( $roles as $role_slug => $role_data ) {
