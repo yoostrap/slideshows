@@ -16,7 +16,7 @@
 	"parent": [
 		"hizzle-slideshows/slideshow"
 	],
-	"version": "1.0.0",
+	"version": "1.0.4",
 	"textdomain": "hizzle-slideshows",
 	"attributes": {},
 	"supports": {
