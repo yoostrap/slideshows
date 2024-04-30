@@ -44,6 +44,7 @@ export default function Edit( { attributes, setAttributes } ) {
 	const { children, ...innerBlocksProps } = useInnerBlocksProps(blockProps, {
 		allowedBlocks,
 		template,
+		templateLock: false,
 		renderAppender: false,
 	});
 
