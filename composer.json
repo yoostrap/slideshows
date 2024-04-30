@@ -3,7 +3,7 @@
     "description": "convert anything into a slideshow",
     "type": "wordpress-plugin",
     "keywords": ["wordpress","hizzle","slideshows"],
-    "license": "GPL-3.0-or-later",
+    "license": "GPL-2.0-or-later",
     "autoload": {
         "psr-4": {
             "Hizzle\\Slideshows\\": "includes/"

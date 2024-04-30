@@ -1,17 +1,15 @@
 === Elevate Your Content with Hizzle Slideshows ===
-Contributors: picocodes, hizzlewp, lewisushindi
+Contributors: hizzlewp, lewisushindi
 Tags: block, slideshow, slider, testimonials, gallery
 Donate link: https://noptin.com/products/?utm_source=wp-repo&utm_medium=donate&utm_campaign=readme
 Requires at least: 6.0
 Tested up to: 6.5
 Requires PHP: 7.0
-Stable tag: 1.0.3
-License: GPL-3.0-or-later
+Stable tag: 1.0.4
+License: GPL-2.0-or-later
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 
-== Transform Your Ideas into Dynamic Presentations ==
-
-**Hizzle Slideshows** empowers you to transform your content into captivating visual journeys, setting the stage for a remarkable user experience on your WordPress website.
+Covert anything into a slideshow in minutes, with settings for complete customization and control.
 
 == Description ==
 
@@ -65,6 +63,10 @@ For dedicated support and assistance, visit our support forum on this page.
 2. Add as many slides as you want
 
 == Changelog ==
+
+= 1.0.4 =
+* [NEW] slides reorder functionality.
+* [NEW] Transitioned to using Composer's autoloader and namespace mechanism.
 
 = 1.0.3 =
 * [ENHANCEMENT] Added 5+ filters for more customization.

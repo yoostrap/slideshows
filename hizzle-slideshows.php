@@ -1,11 +1,11 @@
 <?php
 /**
  * Plugin Name: Hizzle Slideshows
- * Plugin URI: https://hizzle.co/slideshows
+ * Plugin URI: https://zestplugins.com/hizzle-slideshows/
  * Description: Convert anything into a slideshow.
- * Version: 1.0.3
+ * Version: 1.0.4
  * Author: Hizzle
- * Author URI: https://hizzle.co
+ * Author URI: https://zestplugins.com/
  * Text Domain: hizzle-slideshows
  * Domain Path: /languages/
  * Requires at least: 6.0
