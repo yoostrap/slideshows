@@ -1,4 +1,4 @@
-=== Elevate Your Content with Hizzle Slideshows ===
+=== Hizzle Slideshows ===
 Contributors: hizzlewp, lewisushindi
 Tags: block, slideshow, slider, testimonials, gallery
 Donate link: https://noptin.com/products/?utm_source=wp-repo&utm_medium=donate&utm_campaign=readme
