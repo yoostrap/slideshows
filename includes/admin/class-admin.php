@@ -1,4 +1,6 @@
 <?php
+namespace Hizzle\Slideshows\admin;
+
 /*
  * Admin class
  */
@@ -23,5 +25,3 @@ if ( ! class_exists( 'Hizzle_Slideshows_Admin ' ) ) {
 		}
 	}
 }
-
-new Hizzle_Slideshows_Admin();

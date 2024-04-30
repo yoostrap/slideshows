@@ -70,8 +70,8 @@ if ( !defined( 'HSS_SLUG' ) ) {
 
 // Include other essential constants.
 require_once HSS_PATH . 'includes/constants.php';
-require_once HSS_PATH . 'includes/includes.php';
 require_once HSS_PATH . 'includes/functions.php';
+require_once HSS_PATH . 'vendor/autoload.php';
 
 /**
  * Load all translations for our plugin from the MO file.
@@ -111,3 +111,5 @@ function hizzle_slideshows_plugin_listing_links( $links ) {
 	return $links;
 }
 add_filter( 'plugin_action_links_' . plugin_basename( __FILE__ ), 'hizzle_slideshows_plugin_listing_links' );
+
+new Hizzle\Slideshows\admin\Hizzle_Slideshows_Admin();

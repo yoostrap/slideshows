@@ -1,4 +1,5 @@
 <?php
+namespace Hizzle\Slideshows\admin;
 
 if ( ! class_exists( 'HizzleSlideshowsMenu' ) ) {
 	/**

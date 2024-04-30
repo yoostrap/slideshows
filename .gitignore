@@ -101,3 +101,5 @@ Session.vim
 *.swp
 .~lock*
 .vscode
+
+vendor/
