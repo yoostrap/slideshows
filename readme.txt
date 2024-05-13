@@ -52,11 +52,6 @@ For dedicated support and assistance, visit our support forum on this page.
 - Utilize Autoplay for dynamic presentations.
 - Customize appearance to match your brand.
 - Toggle pagination visibility as per your preference.
-- Set dimensions and borders to images for precise control.
-- Maintain image aspect ratio for a polished look.
-- Expand images on click for enhanced viewing.
-- Fine-tune image scale for perfect presentation.
-- Apply filters for creative effects, including two-tone color transformations while retaining the original image integrity.
 
 == Screenshots ==
 1. Sample slideshow (front-end)
