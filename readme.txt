@@ -5,7 +5,7 @@ Donate link: https://noptin.com/products/?utm_source=wp-repo&utm_medium=donate&u
 Requires at least: 6.0
 Tested up to: 6.7.1
 Requires PHP: 7.0
-Stable tag: 1.0.6
+Stable tag: 1.0.5
 License: GPL-2.0-or-later
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 
@@ -52,19 +52,12 @@ For dedicated support and assistance, visit our support forum on this page.
 - Utilize Autoplay for dynamic presentations.
 - Customize appearance to match your brand.
 - Toggle pagination visibility as per your preference.
-- Set dimensions and borders to images for precise control.
-- Maintain image aspect ratio for a polished look.
-- Expand images on click for enhanced viewing.
-- Fine-tune image scale for perfect presentation.
-- Apply filters for creative effects, including two-tone color transformations while retaining the original image integrity.
 
 == Screenshots ==
 1. Sample slideshow (front-end)
 2. Add as many slides as you want
 
 == Changelog ==
-### 1.0.6
-* [IMPROVEMENT] Update freemius sdk.
 
 = 1.0.5 =
 * [FIX] Bug fixes and enhancements.
