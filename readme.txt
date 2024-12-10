@@ -3,7 +3,7 @@ Contributors: hizzlewp, lewisushindi
 Tags: block, slideshow, slider, testimonials, gallery
 Donate link: https://noptin.com/products/?utm_source=wp-repo&utm_medium=donate&utm_campaign=readme
 Requires at least: 6.0
-Tested up to: 6.5
+Tested up to: 6.7.1
 Requires PHP: 7.0
 Stable tag: 1.0.4
 License: GPL-2.0-or-later
