@@ -1,10 +1,10 @@
 <?php
 /**
- * Plugin Name: Hizzle Slideshows
+ * Plugin Name: Slideshows
  * Plugin URI: https://yoostrap.com/slideshows/
  * Description: Convert anything into a slideshow.
  * Version: 1.0.6
- * Author: Hizzle
+ * Author: Yoostrap
  * Author URI: https://yoostrap.com/
  * Text Domain: hizzle-slideshows
  * Domain Path: /languages/
