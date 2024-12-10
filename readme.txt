@@ -5,7 +5,7 @@ Donate link: https://noptin.com/products/?utm_source=wp-repo&utm_medium=donate&u
 Requires at least: 6.0
 Tested up to: 6.5
 Requires PHP: 7.0
-Stable tag: 1.0.5
+Stable tag: 1.0.6
 License: GPL-2.0-or-later
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 
@@ -63,6 +63,8 @@ For dedicated support and assistance, visit our support forum on this page.
 2. Add as many slides as you want
 
 == Changelog ==
+### 1.0.6
+* [IMPROVEMENT] Update freemius sdk.
 
 = 1.0.5 =
 * [FIX] Bug fixes and enhancements.
