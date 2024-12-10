@@ -1,9 +1,9 @@
 <?php return array(
     'root' => array(
         'name' => 'hizzle/slideshows',
-        'pretty_version' => 'dev-develop',
-        'version' => 'dev-develop',
-        'reference' => 'f335e62cf14dcc8b9e16adbdc861b85d6a3b4806',
+        'pretty_version' => 'dev-main',
+        'version' => 'dev-main',
+        'reference' => '9638666f668ef59eeb4a858c3a444590ac20cf76',
         'type' => 'wordpress-plugin',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -20,9 +20,9 @@
             'dev_requirement' => false,
         ),
         'hizzle/slideshows' => array(
-            'pretty_version' => 'dev-develop',
-            'version' => 'dev-develop',
-            'reference' => 'f335e62cf14dcc8b9e16adbdc861b85d6a3b4806',
+            'pretty_version' => 'dev-main',
+            'version' => 'dev-main',
+            'reference' => '9638666f668ef59eeb4a858c3a444590ac20cf76',
             'type' => 'wordpress-plugin',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
